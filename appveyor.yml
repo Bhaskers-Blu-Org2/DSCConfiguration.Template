@@ -2,14 +2,14 @@
 #      environment configuration  #
 #---------------------------------#
 version: 1.0.{build}.0
+clone_folder: c:\projects\{APPVEYOR_PROJECT_NAME}
 environment:
-clone_folder: c:\projects\DSCConfiguration.Template
-ApplicationID:
-  secure: IJBqnB6WjtDi3ej/zy2D70Ry1AvJOrlZK5BhSoqEdxNENd0CL9qdMJndbi6p+di3
-ApplicationPassword:
-  secure: b8lT719n/ll0Bp5SloBvzw==
-TenantID:
-  secure: J/my7xsOE9jewR0DDhD+EU5jeo5Bp83/nmIK8a8QI0QLoZXStCOtk1vUjVsKylW2
+  ApplicationID:
+    secure: IJBqnB6WjtDi3ej/zy2D70Ry1AvJOrlZK5BhSoqEdxNENd0CL9qdMJndbi6p+di3
+  ApplicationPassword:
+    secure: b8lT719n/ll0Bp5SloBvzw==
+  TenantID:
+    secure: J/my7xsOE9jewR0DDhD+EU5jeo5Bp83/nmIK8a8QI0QLoZXStCOtk1vUjVsKylW2
 install:
   - git clone https://github.com/Microsoft/DscConfiguration.Tests
   - ps: |
