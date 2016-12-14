@@ -137,9 +137,9 @@ Describe 'Common Tests - Module Manifest' {
     }
 
     $moduleName = (Get-Item -Path $moduleRootFilePath).Name
-    $moduleName
+    write-host $moduleName
     $moduleManifestPath = Join-Path -Path $moduleRootFilePath -ChildPath "$moduleName.psd1"
-    $moduleManifestPath
+    write-host $moduleManifestPath
 
     <#
         ErrorAction specified as SilentelyContinue because this call will throw an error
@@ -148,7 +148,7 @@ Describe 'Common Tests - Module Manifest' {
         would always crash this test.
     #>
     $moduleManifestProperties = Test-ModuleManifest -Path $moduleManifestPath -ErrorAction 'SilentlyContinue'
-    $moduleManifestProperties.PowerShellVersion
+    write-host $($moduleManifestProperties.PowerShellVersion)
 
     It "Should contain a PowerShellVersion property of at least $minimumPSVersion based on resource types" {
         $moduleManifestProperties.PowerShellVersion -ge $minimumPSVersion | Should Be $true 
