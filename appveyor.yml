@@ -48,6 +48,8 @@ build: false
 
 test_script:
     - ps: |
+        $projectPath = 'c:\projects\'+$env:APPVEYOR_PROJECT_NAME
+        if ($pwd -ne $projectPath) {Set-Location $projectPath}
         Write-Host 'DEBUG:'
         .\debug.ps1
         $testResultsFile = ".\TestsResults.xml"
