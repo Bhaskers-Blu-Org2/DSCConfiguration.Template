@@ -2,7 +2,7 @@
 #      environment configuration  #
 #---------------------------------#
 version: 1.0.{build}.0
-clone_folder: c:\projects\{APPVEYOR_PROJECT_NAME}
+clone_folder: c:\projects\DSCConfiguration.Template
 environment:
   ApplicationID:
     secure: IJBqnB6WjtDi3ej/zy2D70Ry1AvJOrlZK5BhSoqEdxNENd0CL9qdMJndbi6p+di3
