@@ -10,7 +10,6 @@ environment:
   TenantID:
     secure: J/my7xsOE9jewR0DDhD+EU5jeo5Bp83/nmIK8a8QI0QLoZXStCOtk1vUjVsKylW2
 install:
-  - git clone https://github.com/Microsoft/DSCConfiguration.Template
   - git clone https://github.com/PowerShell/DscResource.Tests
   - git clone https://github.com/Microsoft/DscConfiguration.Tests
   - ps: |
@@ -34,12 +33,7 @@ install:
           Write-Host "Prepared configurations:`n$($Configurations | Foreach -Process {$_.Name})"
 
           Write-Host 'DEBUG:'
-          $moduleRootFilePath = Split-Path -Path $PSScriptRoot -Parent
-          $moduleRootFilePath
-          $moduleName = (Get-Item -Path $moduleRootFilePath).Name
-          $moduleManifestPath = Join-Path -Path $moduleRootFilePath -ChildPath "$moduleName.psd1"
-          $moduleManifestProperties = Test-ModuleManifest -Path $moduleManifestPath -ErrorAction 'SilentlyContinue'
-          $moduleManifestProperties.PowerShellVersion
+          .\debug.ps1
         }
         catch [System.Exception] {
             throw $error
