@@ -48,7 +48,7 @@ build: false
 
 test_script:
     - ps: |
-        $projectPath = 'c:\projects\'+$env:APPVEYOR_PROJECT_NAME
+        $projectPath = 'c:\projects\'+$env:APPVEYOR_PROJECT_NAME.Replace('.','-')
         if ($pwd -ne $projectPath) {Set-Location $projectPath}
         Write-Host 'DEBUG:'
         .\debug.ps1
