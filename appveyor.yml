@@ -32,6 +32,14 @@ install:
           Import-ModuleFromSource -Name $env:APPVEYOR_PROJECT_NAME
           $Configurations = Invoke-ConfigurationPrep -Module $env:APPVEYOR_PROJECT_NAME -Path "$env:TEMP\$env:APPVEYOR_PROJECT_ID"
           Write-Host "Prepared configurations:`n$($Configurations | Foreach -Process {$_.Name})"
+
+          Write-Host 'DEBUG:'
+          $moduleRootFilePath = Split-Path -Path $PSScriptRoot -Parent
+          $moduleRootFilePath
+          $moduleName = (Get-Item -Path $moduleRootFilePath).Name
+          $moduleManifestPath = Join-Path -Path $moduleRootFilePath -ChildPath "$moduleName.psd1"
+          $moduleManifestProperties = Test-ModuleManifest -Path $moduleManifestPath -ErrorAction 'SilentlyContinue'
+          $moduleManifestProperties.PowerShellVersion
         }
         catch [System.Exception] {
             throw $error
