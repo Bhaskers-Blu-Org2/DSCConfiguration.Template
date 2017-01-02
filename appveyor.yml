@@ -11,7 +11,6 @@ environment:
   TenantID:
     secure: J/my7xsOE9jewR0DDhD+EU5jeo5Bp83/nmIK8a8QI0QLoZXStCOtk1vUjVsKylW2
 install:
-  - git clone https://github.com/PowerShell/DscResource.Tests
   - git clone https://github.com/Microsoft/DscConfiguration.Tests
   - ps: |
         try {
