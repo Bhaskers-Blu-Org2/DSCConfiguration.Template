@@ -18,7 +18,7 @@ install:
           Import-Module -Name .\DscConfiguration.Tests\AppVeyorRunner.psm1 -Force
           Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.205 -Force | Out-Null
           Install-Module -Name Pester -Repository PSGallery -Force
-          Install-Module -Name PSCriptAnalyzer PSGallery -Force
+          Install-Module -Name PSCriptAnalyzer -Repository PSGallery -Force
           Update-Module -Name AzureRM -Repository PSGallery -Force
 
           # Fix module path if duplicates exist (TestHelper)
