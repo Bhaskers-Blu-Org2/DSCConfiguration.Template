@@ -26,7 +26,7 @@
         {
             Ensure          = 'Present'
             Destination     = $Data.Destination
-            Path            = (Get-Item $Data.Path).ParentFolder
+            Path            = (Get-ChildItem $Data.Path).ParentFolder
         }
     }
 }
