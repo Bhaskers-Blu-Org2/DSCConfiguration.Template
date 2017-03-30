@@ -11,22 +11,15 @@
         This configuration requires the corresponding configdata file
     #>
 
-    Import-DscResource -ModuleName 'PSDesiredStateConfiguration', @{ModuleName='xPSDesiredStateConfiguration';ModuleVersion='5.0.0.0'}
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
     
     Node $AllNodes.NodeName
     {
-        # WindowsOptionalFeature is compatible with the Nano Server installation option
         File testfile
         {
             Ensure          = 'Present'
             DestinationPath = $Data.Path
             Contents        = $Data.Contents
-        }
-        xArchive testarchive
-        {
-            Ensure          = 'Present'
-            Destination     = $Data.Destination
-            Path            = (Get-ChildItem $Data.Path).ParentFolder
         }
     }
 }
@@ -48,12 +41,36 @@ configuration TemplateBasic
     
     Node localhost
     {
-        # WindowsOptionalFeature is compatible with the Nano Server installation option
         File testfile
         {
             Ensure          = 'Present'
-            DestinationPath = 'c:\filetoo.txt'
-            Contents        = 'this is some text too'
+            DestinationPath = 'c:\file.txt'
+            Contents        = 'this is some text'
+        }
+    }
+}
+
+configuration TemplateWithResourceFromGallery
+{
+    <#
+        .DESCRIPTION
+        Basic configuration template using resource from PSGallery
+
+        .EXAMPLE
+        TemplateWithResourceFromGallery -outpath c:\dsc\
+
+        .NOTES
+        This is a very basic configuration that uses the most recent experimental resource from the gallery
+    #>
+
+    Import-DscResource -module 'xPSDesiredStateConfiguration'
+    
+    Node localhost
+    {
+        xGroup Group1
+        {
+            GroupName = 'Group1'
+            Ensure = 'Present'
         }
     }
 }
