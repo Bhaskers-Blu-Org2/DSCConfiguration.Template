@@ -69,8 +69,8 @@ configuration TemplateWithConfigData
         File testfile
         {
             Ensure          = 'Present'
-            DestinationPath = $Data.Path
-            Contents        = $Data.Contents
+            DestinationPath = $Node.Path
+            Contents        = $Node.Contents
         }
     }
 }
