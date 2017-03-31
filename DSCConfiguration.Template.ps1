@@ -49,29 +49,28 @@ configuration TemplateWithResourceFromGallery
     }
 }
 
+configuration TemplateWithConfigData
+{
+    <#
+        .DESCRIPTION
+        DSC Coniguration that uses ConfigData file
 
-# configuration TemplateWithConfigData
-# {
-#     <#
-#         .DESCRIPTION
-#         DSC Coniguration that uses ConfigData file
+        .EXAMPLE
+        TemplateWithConfigData -outpath c:\dsc\
 
-#         .EXAMPLE
-#         TemplateWithConfigData -outpath c:\dsc\
+        .NOTES
+        This configuration requires the corresponding configdata file
+    #>
 
-#         .NOTES
-#         This configuration requires the corresponding configdata file
-#     #>
-
-#     Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
     
-#     Node $AllNodes.NodeName
-#     {
-#         File testfile
-#         {
-#             Ensure          = 'Present'
-#             DestinationPath = $Data.Path
-#             Contents        = $Data.Contents
-#         }
-#     }
-# }
+    Node $AllNodes.NodeName
+    {
+        File testfile
+        {
+            Ensure          = 'Present'
+            DestinationPath = $Data.Path
+            Contents        = $Data.Contents
+        }
+    }
+}
