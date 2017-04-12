@@ -64,7 +64,7 @@ configuration TemplateWithConfigData
 
     Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
     
-    Node $AllNodes.Where{$_.Roles -contains "template"}.NodeName
+    Node localhost
     {
         File testfile
         {
