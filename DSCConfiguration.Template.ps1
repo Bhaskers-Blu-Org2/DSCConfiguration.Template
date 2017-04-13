@@ -1,4 +1,4 @@
-﻿configuration Template
+﻿configuration DSCConfiguration.Template
 {
     <#
         .DESCRIPTION
