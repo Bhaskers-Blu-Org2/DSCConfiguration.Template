@@ -24,7 +24,7 @@
     }
 }
 
-configuration ResourceFromGallery
+configuration ModuleFromGallery
 {
     <#
         .DESCRIPTION
