@@ -2,7 +2,6 @@
     AllNodes = @(
         @{
             NodeName            = 'localhost';
-            Role                = 'template';
             Data                = 
             @{
                 Path            = 'c:\file.txt';

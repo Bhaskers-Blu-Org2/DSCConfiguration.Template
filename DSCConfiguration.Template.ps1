@@ -1,4 +1,4 @@
-﻿configuration TemplateBasic
+﻿configuration Basic
 {
     <#
         .DESCRIPTION
@@ -24,7 +24,7 @@
     }
 }
 
-configuration TemplateWithResourceFromGallery
+configuration ResourceFromGallery
 {
     <#
         .DESCRIPTION
@@ -49,7 +49,7 @@ configuration TemplateWithResourceFromGallery
     }
 }
 
-configuration TemplateWithConfigData
+configuration BasicWithConfigData
 {
     <#
         .DESCRIPTION
@@ -64,7 +64,7 @@ configuration TemplateWithConfigData
 
     Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
     
-    Node localhost
+    Node $AllNodes.NodeName
     {
         File testfile
         {
