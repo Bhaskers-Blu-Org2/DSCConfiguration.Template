@@ -1,7 +1,7 @@
 @{
     AllNodes = @(
         @{
-            NodeName            = 'localhost';
+            NodeName            = '*';
             Data                = 
             @{
                 Path            = 'c:\file.txt';
