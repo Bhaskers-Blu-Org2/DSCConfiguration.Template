@@ -5,9 +5,9 @@ environment:
   ApplicationID:
     secure: nYWqZXkLEuw0UC16AIge0xqkYCttn1KNrCsSnkvbQQ2hpsqoPHsUlRGhF5feq/xT
   TenantID:
-    secure: edbSg+YAh81/meet6sHRowgnpg34s3F3b3dpTkvpO385mtTj/R8BiwlYXX6Wpw99
+    secure: 8DSIKX0dE7nZgAE+V70HcF1G/LJ+PolETO1r0ijUBYMBcAnhhFv5H5FvN0L8v32N
   ApplicationPassword:
-    secure: UR5ad+M70ie51tUX6oqGHA==
+    secure: zV3r4bwG65rWRfF1L23RYLj7GXVxsMdZtasCsX0+pYA=
   BuildFolder: $(APPVEYOR_BUILD_FOLDER)
   ProjectName: $(APPVEYOR_PROJECT_NAME)
   ProjectID: $(APPVEYOR_POJECT_ID)
