@@ -25,7 +25,7 @@
         xGroup testGroup
         {
             Ensure = 'Present'
-            GroupName = $Node.Group1Name
+            GroupName = $Node.GroupName
         }
     }
 }
