@@ -1,10 +1,10 @@
 @{
     AllNodes = @(
         @{
-            NodeName            = 'localhost';
-            Path            = 'c:\file.txt';
-            Content         = 'this is some text';
-            GroupName       = 'Group1'
+            NodeName    = 'localhost'
+            Path        = 'c:\file.txt'
+            Contents     = 'this is some text'
+            GroupName   = 'Group1'
         }
     )
 }
