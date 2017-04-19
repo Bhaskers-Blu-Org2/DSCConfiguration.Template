@@ -2,12 +2,9 @@
     AllNodes = @(
         @{
             NodeName            = 'localhost';
-            Data                = 
-            @{
-                Path            = 'c:\file.txt';
-                Content         = 'this is some text';
-                GroupName       = 'Group1'
-            };
+            Path            = 'c:\file.txt';
+            Content         = 'this is some text';
+            GroupName       = 'Group1'
         }
     )
 }
