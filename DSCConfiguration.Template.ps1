@@ -11,7 +11,7 @@
         This configuration requires the corresponding configdata file
     #>
 
-    $Import = Import-DscResource -ModuleName 'PSDesiredStateConfiguration','xPSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration','xPSDesiredStateConfiguration' -ErrorAction SilentlyContinue
     
     Node $AllNodes.NodeName
     {
